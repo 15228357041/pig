@@ -69,9 +69,13 @@
 	<logger name="com.alibaba.nacos" level="OFF">
 		<appender-ref ref="error"/>
 	</logger>
+  <!--开发环境:sql打印控制台-->
+  <springProfile name="dev">
+    <logger name="com.pig4cloud.pig.admin.mapper" level="debug"/>
+  </springProfile>
 
 	<!-- Level: FATAL 0  ERROR 3  WARN 4  INFO 6  DEBUG 7 -->
-	<root level="INFO">
+	<root level="DEBUG">
 		<appender-ref ref="console"/>
 		<appender-ref ref="debug"/>
 		<appender-ref ref="error"/>

@@ -23,7 +23,8 @@ import com.pig4cloud.pig.common.core.util.R;
 import com.pig4cloud.pig.common.log.annotation.SysLog;
 import com.pig4cloud.pig.demo.entity.Demo;
 import com.pig4cloud.pig.demo.service.DemoService;
-import com.pig4cloud.pig.demo.service.RemoteLogService;
+import com.pig4cloud.pig.demo.service.ReLogService;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import io.swagger.annotations.Api;
@@ -47,7 +48,7 @@ public class DemoController {
     private final  DemoService demoService;
 
 
-	private final RemoteLogService remoteLogService;
+	private final ReLogService reLogService;
 
     /**
      * 分页查询
@@ -74,6 +75,12 @@ public class DemoController {
     public R getById(@PathVariable("id" ) Integer id) {
         return R.ok(demoService.getById(id));
     }
+
+//	@GetMapping("/{id}" )
+//	@PreAuthorize("@pms.hasPermission('demo_demo_get')" )
+//	public R saveSysLog(@PathVariable("id" ) Integer id) {
+//		return R.ok(reLogService.findUserByID(id));
+//	}
 
     /**
      * 新增demo 表
@@ -106,16 +113,31 @@ public class DemoController {
      * @param id id
      * @return R
      */
- /*   @ApiOperation(value = "通过id删除demo 表", notes = "通过id删除demo 表")
-    @SysLog("通过id删除demo 表" )
-    @DeleteMapping("/{id}" )
-    @PreAuthorize("@pms.hasPermission('demo_demo_del')" )
-    public R removeById(@PathVariable Integer id) {
-        return R.ok(demoService.removeById(id));
-    }*/
+//    @ApiOperation(value = "通过id删除demo 表", notes = "通过id删除demo 表")
+//    @SysLog("通过id删除demo 表" )
+//    @DeleteMapping("/{id}" )
+//    @PreAuthorize("@pms.hasPermission('demo_demo_del')" )
+//    public R removeById(@PathVariable Integer id) {
+//        return R.ok(demoService.removeById(id));
+//    }
+	/**
+	 * @Author zxf
+	 * @Description //分布式事务demo,Feign+seata+nacos
+	 * @Date 2020/10/23 17:31
+	 * @Param
+	 * @return
+	 */
 
-	@GetMapping("/{id}" )
-	public R saveSysLog(@PathVariable Integer id) {
-		return R.ok(remoteLogService.findUserByID(id));
+	@DeleteMapping("/{id}" )
+	@PreAuthorize("@pms.hasPermission('demo_demo_del')" )
+	@GlobalTransactional(rollbackFor = Exception.class)
+	public R saveSysLog(@PathVariable("id" ) Integer id) {
+		R.ok(reLogService.userDel(2));
+		Demo demo = new Demo();
+		demo.setPassword("add");
+		demo.setUsername("test");
+		R.ok(demoService.save(demo));
+		int a = 3/0;
+		return R.ok(reLogService.findUserByID(id));
 	}
 }
