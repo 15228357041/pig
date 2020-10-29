@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ /*
-  ~  *  Copyright (c) 2019-2020, ÀäÀä (wangiegie@gmail.com).
+  ~  *  Copyright (c) 2019-2020, ï¿½ï¿½ï¿½ï¿½ (wangiegie@gmail.com).
   ~  *  <p>
   ~  *  Licensed under the GNU Lesser General Public License 3.0 (the "License");
   ~  *  you may not use this file except in compliance with the License.
@@ -61,24 +61,24 @@
 	</properties>
 
 	<dependencies>
-		<!--ÅäÖÃÎÄ¼þ´¦ÀíÆ÷-->
+		<!--ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
-		<!--ÅäÖÃÎÄ¼þ¼Ó½âÃÜ-->
+		<!--ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ó½ï¿½ï¿½ï¿½-->
 		<dependency>
 			<groupId>com.github.ulisesbocchio</groupId>
 			<artifactId>jasypt-spring-boot-starter</artifactId>
 			<version>${jasypt.version}</version>
 		</dependency>
-		<!--¼à¿Ø-->
+		<!--ï¿½ï¿½ï¿½-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		<!--¼à¿Ø¿Í»§¶Ë-->
+		<!--ï¿½ï¿½Ø¿Í»ï¿½ï¿½ï¿½-->
 		<dependency>
 			<groupId>de.codecentric</groupId>
 			<artifactId>spring-boot-admin-starter-client</artifactId>
@@ -90,7 +90,7 @@
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		<!--²âÊÔÒÀÀµ-->
+		<!--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -132,19 +132,19 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<!--ÎÈ¶¨°æ±¾£¬Ìæ´úspring security bomÄÚÖÃ-->
+			<!--ï¿½È¶ï¿½ï¿½æ±¾ï¿½ï¿½ï¿½ï¿½ï¿½spring security bomï¿½ï¿½ï¿½ï¿½-->
 			<dependency>
 				<groupId>org.springframework.security.oauth</groupId>
 				<artifactId>spring-security-oauth2</artifactId>
 				<version>${security.oauth.version}</version>
 			</dependency>
-			<!--ÎÈ¶¨°æ±¾£¬Ìæ´úspring boot bomÄÚÖÃ-->
+			<!--ï¿½È¶ï¿½ï¿½æ±¾ï¿½ï¿½ï¿½ï¿½ï¿½spring boot bomï¿½ï¿½ï¿½ï¿½-->
 			<dependency>
 				<groupId>io.projectreactor.netty</groupId>
 				<artifactId>reactor-netty</artifactId>
 				<version>${reactor.netty.version}</version>
 			</dependency>
-			<!--swagger ×îÐÂÒÀÀµÄÚÖÃ°æ±¾-->
+			<!--swagger ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã°æ±¾-->
 			<dependency>
 				<groupId>io.swagger</groupId>
 				<artifactId>swagger-models</artifactId>
@@ -155,7 +155,7 @@
 				<artifactId>swagger-annotations</artifactId>
 				<version>${swagger.core.version}</version>
 			</dependency>
-			<!--fastjson °æ±¾-->
+			<!--fastjson ï¿½æ±¾-->
 			<dependency>
 				<groupId>com.alibaba</groupId>
 				<artifactId>fastjson</artifactId>
@@ -168,13 +168,13 @@
         <version>2.8.0</version>
       </dependency>
 
-			<!--web Ä£¿é-->
+			<!--web Ä£ï¿½ï¿½-->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-web</artifactId>
 				<version>${spring-boot.version}</version>
 				<exclusions>
-					<!--ÅÅ³ýtomcatÒÀÀµ-->
+					<!--ï¿½Å³ï¿½tomcatï¿½ï¿½ï¿½ï¿½-->
 					<exclusion>
 						<artifactId>spring-boot-starter-tomcat</artifactId>
 						<groupId>org.springframework.boot</groupId>
@@ -216,9 +216,9 @@
 					<configuration>
 						<!-- Docker Remote Api-->
 						<dockerHost>${docker.host}</dockerHost>
-						<!-- Docker ¾µÏñË½·þ-->
+						<!-- Docker ï¿½ï¿½ï¿½ï¿½Ë½ï¿½ï¿½-->
 						<registry>${docker.registry}</registry>
-						<!-- ÈÏÖ¤ÐÅÏ¢-->
+						<!-- ï¿½ï¿½Ö¤ï¿½ï¿½Ï¢-->
 						<authConfig>
 							<push>
 								<username>${docker.username}</username>
@@ -227,7 +227,7 @@
 						</authConfig>
 						<images>
 							<image>
-								<!-- ¾µÏñÃû³Æ£º 172.17.0.111/library/pig-gateway:2.6.3-->
+								<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½ 172.17.0.111/library/pig-gateway:2.6.3-->
 								<name>${docker.registry}/${docker.namespace}/${project.name}:${project.version}</name>
 								<build>
 									<dockerFile>${project.basedir}/Dockerfile</dockerFile>
@@ -239,13 +239,13 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
-			<!--´ò°üjar Óëgit commit ¹ØÁª²å¼þ-->
+			<!--ï¿½ï¿½ï¿½jar ï¿½ï¿½git commit ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-->
 			<plugin>
 				<groupId>pl.project13.maven</groupId>
 				<artifactId>git-commit-id-plugin</artifactId>
 				<version>${git.commit.plugin}</version>
 			</plugin>
-			<!--´úÂë¸ñÊ½²å¼þ£¬Ä¬ÈÏÊ¹ÓÃspring ¹æÔò-->
+			<!--ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½Ê¹ï¿½ï¿½spring ï¿½ï¿½ï¿½ï¿½-->
 			<plugin>
 				<groupId>io.spring.javaformat</groupId>
 				<artifactId>spring-javaformat-maven-plugin</artifactId>
@@ -255,7 +255,7 @@
 	</build>
 
 	<repositories>
-		<!--°¢ÀïÔÆÖ÷²Ö¿â£¬´úÀíÁËmaven centralºÍjcenter²Ö¿â-->
+		<!--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¿â£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½maven centralï¿½ï¿½jcenterï¿½Ö¿ï¿½-->
 		<repository>
 			<id>aliyun</id>
 			<name>aliyun</name>
@@ -286,11 +286,11 @@
 		<profile>
 			<id>dev</id>
 			<properties>
-				<!-- »·¾³±êÊ¶£¬ÐèÒªÓëÅäÖÃÎÄ¼þµÄÃû³ÆÏà¶ÔÓ¦ -->
+				<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¶ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ -->
 				<profiles.active>dev</profiles.active>
 			</properties>
 			<activation>
-				<!-- Ä¬ÈÏ»·¾³ -->
+				<!-- Ä¬ï¿½Ï»ï¿½ï¿½ï¿½ -->
 				<activeByDefault>true</activeByDefault>
 			</activation>
 		</profile>
