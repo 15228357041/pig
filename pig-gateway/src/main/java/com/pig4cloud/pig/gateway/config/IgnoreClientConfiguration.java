@@ -41,4 +41,5 @@ public class IgnoreClientConfiguration {
 	 */
 	private List<String> clients = new ArrayList<>();
 
+
 }

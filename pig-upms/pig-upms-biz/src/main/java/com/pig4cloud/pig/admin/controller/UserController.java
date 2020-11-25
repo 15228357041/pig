@@ -28,6 +28,7 @@ import com.pig4cloud.pig.common.core.util.R;
 import com.pig4cloud.pig.common.log.annotation.SysLog;
 import com.pig4cloud.pig.common.security.annotation.Inner;
 import com.pig4cloud.pig.common.security.util.SecurityUtils;
+import io.seata.spring.annotation.GlobalTransactional;
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -102,12 +103,19 @@ public class UserController {
 	 * @param id ID
 	 * @return R
 	 */
+//	@SysLog("删除用户信息")
+//	@DeleteMapping("/{id}")
+//	@PreAuthorize("@pms.hasPermission('sys_user_del')")
+//	public R userDel(@PathVariable Integer id) {
+//		SysUser sysUser = userService.getById(id);
+//		return R.ok(userService.removeUserById(sysUser));
+//	}
+
 	@SysLog("删除用户信息")
 	@DeleteMapping("/{id}")
 	@PreAuthorize("@pms.hasPermission('sys_user_del')")
 	public R userDel(@PathVariable Integer id) {
-		SysUser sysUser = userService.getById(id);
-		return R.ok(userService.removeUserById(sysUser));
+		return R.ok(userService.removeById(id));
 	}
 
 	/**

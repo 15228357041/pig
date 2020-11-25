@@ -12,18 +12,14 @@ import com.pig4cloud.pig.common.core.constant.SecurityConstants;
 import com.pig4cloud.pig.common.core.constant.ServiceNameConstants;
 import com.pig4cloud.pig.common.core.util.R;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author lengleng
  * @date 2019/2/1
  */
-@FeignClient(contextId = "remoteLogService", value = ServiceNameConstants.UMPS_SERVICE,
-	fallbackFactory = RemoteLogServiceFallbackFactory.class)
-public interface RemoteLogService {
+@FeignClient(contextId = "reLogService", value = ServiceNameConstants.UMPS_SERVICE)
+public interface ReLogService {
 
 	/**
 	 * 保存日志
@@ -35,7 +31,10 @@ public interface RemoteLogService {
 	@PostMapping("/log")
 	R<Boolean> saveLog(@RequestBody SysLog sysLog, @RequestHeader(SecurityConstants.FROM) String from);
 
-	@PostMapping("/user/{id}")
-	R findUserByID(@PathVariable Integer id);
 
+	@GetMapping("/user/{id}")
+	R findUserByID(@PathVariable(value = "id") Integer id);
+
+	@DeleteMapping("/user/{id}")
+	R userDel(@PathVariable(value = "id") Integer id);
 }
