@@ -106,6 +106,7 @@
 		<module>pig-common</module>
 		<module>pig-visual</module>
     <module>pig-demo</module>
+    <module>pig-job</module>
   </modules>
 
 	<dependencyManagement>
@@ -287,7 +288,7 @@
 			<id>dev</id>
 			<properties>
 				<!-- ������ʶ����Ҫ�������ļ����������Ӧ -->
-				<profiles.active>dev</profiles.active>
+        <profiles.active>dev</profiles.active>
 			</properties>
 			<activation>
 				<!-- Ĭ�ϻ��� -->

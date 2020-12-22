@@ -39,6 +39,5 @@
 		<module>pig-common-security</module>
 		<module>pig-common-sentinel</module>
 		<module>pig-common-swagger</module>
-    <module>pig-common-job</module>
   </modules>
 </project>

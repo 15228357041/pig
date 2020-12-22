@@ -1,6 +1,6 @@
 # web port
 server:
-  port: 8081
+  port: 8091
 # no web
 #spring.main.web-environment=false
 
@@ -12,14 +12,15 @@ logging:
 ### xxl-job admin address list, such as "http://address" or "http://address01,http://address02"
 xxl:
   job:
+    accessToken: 123456
     admin:
-      addresses: http://127.0.0.1:8080/xxl-job-admin
-      accessToken:
+      addresses: http://127.0.0.1:8090/xxl-job-admin
     executor:
       ### xxl-job executor appname
       appname: xxl-job-executor-sample
       address:
       ip:
+      port: 9999
       logpath: /data/applogs/pig-job/jobhandler
       logretentiondays: 30
 

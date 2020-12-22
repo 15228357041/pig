@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.xuxueli</groupId>
-        <artifactId>xxl-job-executor-samples</artifactId>
+        <artifactId>pig-job-executor-samples</artifactId>
         <version>2.3.0-SNAPSHOT</version>
     </parent>
-    <artifactId>xxl-job-executor-sample-springboot</artifactId>
+    <artifactId>pig-job-executor-sample-springboot</artifactId>
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
@@ -42,11 +42,16 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+          <groupId>org.apache.tomcat.embed</groupId>
+          <artifactId>tomcat-embed-jasper</artifactId>
+          <version>7.0.59</version>
+        </dependency>
 
         <!-- xxl-job-core -->
         <dependency>
             <groupId>com.xuxueli</groupId>
-            <artifactId>xxl-job-core</artifactId>
+            <artifactId>pig-job-core</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
 
