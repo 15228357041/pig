@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!--
   ~ /*
-  ~  *  Copyright (c) 2019-2020, ���� (wangiegie@gmail.com).
+  ~  *  Copyright (c) 2019-2020, ???? (wangiegie@gmail.com).
   ~  *  <p>
   ~  *  Licensed under the GNU Lesser General Public License 3.0 (the "License");
   ~  *  you may not use this file except in compliance with the License.
@@ -61,24 +61,24 @@
 	</properties>
 
 	<dependencies>
-		<!--�����ļ�������-->
+		<!--?????????????-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
-		<!--�����ļ��ӽ���-->
+		<!--????????????-->
 		<dependency>
 			<groupId>com.github.ulisesbocchio</groupId>
 			<artifactId>jasypt-spring-boot-starter</artifactId>
 			<version>${jasypt.version}</version>
 		</dependency>
-		<!--���-->
+		<!--???-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		<!--��ؿͻ���-->
+		<!--???????-->
 		<dependency>
 			<groupId>de.codecentric</groupId>
 			<artifactId>spring-boot-admin-starter-client</artifactId>
@@ -90,7 +90,7 @@
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		<!--��������-->
+		<!--????????-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -107,6 +107,7 @@
 		<module>pig-visual</module>
     <module>pig-demo</module>
     <module>pig-job</module>
+    <module>pig-order</module>
   </modules>
 
 	<dependencyManagement>
@@ -133,19 +134,19 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<!--�ȶ��汾�����spring security bom����-->
+			<!--???????????spring security bom????-->
 			<dependency>
 				<groupId>org.springframework.security.oauth</groupId>
 				<artifactId>spring-security-oauth2</artifactId>
 				<version>${security.oauth.version}</version>
 			</dependency>
-			<!--�ȶ��汾�����spring boot bom����-->
+			<!--???????????spring boot bom????-->
 			<dependency>
 				<groupId>io.projectreactor.netty</groupId>
 				<artifactId>reactor-netty</artifactId>
 				<version>${reactor.netty.version}</version>
 			</dependency>
-			<!--swagger �����������ð汾-->
+			<!--swagger ??????????????-->
 			<dependency>
 				<groupId>io.swagger</groupId>
 				<artifactId>swagger-models</artifactId>
@@ -156,7 +157,7 @@
 				<artifactId>swagger-annotations</artifactId>
 				<version>${swagger.core.version}</version>
 			</dependency>
-			<!--fastjson �汾-->
+			<!--fastjson ???-->
 			<dependency>
 				<groupId>com.alibaba</groupId>
 				<artifactId>fastjson</artifactId>
@@ -169,13 +170,13 @@
         <version>2.8.0</version>
       </dependency>
 
-			<!--web ģ��-->
+			<!--web ???-->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-web</artifactId>
 				<version>${spring-boot.version}</version>
 				<exclusions>
-					<!--�ų�tomcat����-->
+					<!--???tomcat????-->
 					<exclusion>
 						<artifactId>spring-boot-starter-tomcat</artifactId>
 						<groupId>org.springframework.boot</groupId>
@@ -217,9 +218,9 @@
 					<configuration>
 						<!-- Docker Remote Api-->
 						<dockerHost>${docker.host}</dockerHost>
-						<!-- Docker ����˽��-->
+						<!-- Docker ???????-->
 						<registry>${docker.registry}</registry>
-						<!-- ��֤��Ϣ-->
+						<!-- ??????-->
 						<authConfig>
 							<push>
 								<username>${docker.username}</username>
@@ -228,7 +229,7 @@
 						</authConfig>
 						<images>
 							<image>
-								<!-- �������ƣ� 172.17.0.111/library/pig-gateway:2.6.3-->
+								<!-- ????????? 172.17.0.111/library/pig-gateway:2.6.3-->
 								<name>${docker.registry}/${docker.namespace}/${project.name}:${project.version}</name>
 								<build>
 									<dockerFile>${project.basedir}/Dockerfile</dockerFile>
@@ -240,13 +241,13 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
-			<!--���jar ��git commit �������-->
+			<!--???jar ??git commit ???????-->
 			<plugin>
 				<groupId>pl.project13.maven</groupId>
 				<artifactId>git-commit-id-plugin</artifactId>
 				<version>${git.commit.plugin}</version>
 			</plugin>
-			<!--�����ʽ�����Ĭ��ʹ��spring ����-->
+			<!--?????????????????spring ????-->
 			<plugin>
 				<groupId>io.spring.javaformat</groupId>
 				<artifactId>spring-javaformat-maven-plugin</artifactId>
@@ -256,7 +257,7 @@
 	</build>
 
 	<repositories>
-		<!--���������ֿ⣬������maven central��jcenter�ֿ�-->
+		<!--?????????????????maven central??jcenter???-->
 		<repository>
 			<id>aliyun</id>
 			<name>aliyun</name>
@@ -287,11 +288,11 @@
 		<profile>
 			<id>dev</id>
 			<properties>
-				<!-- ������ʶ����Ҫ�������ļ����������Ӧ -->
+				<!-- ??????????????????????????????? -->
         <profiles.active>dev</profiles.active>
 			</properties>
 			<activation>
-				<!-- Ĭ�ϻ��� -->
+				<!-- ?????? -->
 				<activeByDefault>true</activeByDefault>
 			</activation>
 		</profile>

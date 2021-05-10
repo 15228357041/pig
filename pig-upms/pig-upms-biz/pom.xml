@@ -33,11 +33,11 @@
 
 	<dependencies>
     <!--mybatis-->
-    <dependency>
-      <groupId>com.baomidou</groupId>
-      <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
-      <version>${dynamic-ds.version}</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.baomidou</groupId>-->
+<!--      <artifactId>dynamic-datasource-spring-boot-starter</artifactId>-->
+<!--      <version>${dynamic-ds.version}</version>-->
+<!--    </dependency>-->
 
 		<!--upms api、model 模块-->
 		<dependency>

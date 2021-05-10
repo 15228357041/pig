@@ -46,7 +46,7 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) {
 		http.formLogin().loginPage("/token/login").loginProcessingUrl("/token/form")
 				.failureHandler(authenticationFailureHandler()).and().authorizeRequests()
-				.antMatchers("/token/**", "/actuator/**", "/mobile/**").permitAll().anyRequest().authenticated().and()
+				.antMatchers("/token/**", "/actuator/**", "/mobile/**", "/oauth/**").permitAll().anyRequest().authenticated().and()
 				.csrf().disable();
 	}
 

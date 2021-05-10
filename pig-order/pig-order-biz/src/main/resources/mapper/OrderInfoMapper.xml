@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~
+  ~      Copyright (c) 2018-2025, lengleng All rights reserved.
+  ~
+  ~  Redistribution and use in source and binary forms, with or without
+  ~  modification, are permitted provided that the following conditions are met:
+  ~
+  ~ Redistributions of source code must retain the above copyright notice,
+  ~  this list of conditions and the following disclaimer.
+  ~  Redistributions in binary form must reproduce the above copyright
+  ~  notice, this list of conditions and the following disclaimer in the
+  ~  documentation and/or other materials provided with the distribution.
+  ~  Neither the name of the pig4cloud.com developer nor the names of its
+  ~  contributors may be used to endorse or promote products derived from
+  ~  this software without specific prior written permission.
+  ~  Author: lengleng (wangiegie@gmail.com)
+  ~
+  -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pig4cloud.pig.order.mapper.OrderInfoMapper">
+
+  <resultMap id="orderInfoMap" type="com.pig4cloud.pig.order.entity.OrderInfo">
+                  <id property="id" column="id"/>
+                        <result property="createDate" column="create_date"/>
+                        <result property="updateDate" column="update_date"/>
+                        <result property="isDel" column="is_del"/>
+                        <result property="userId" column="user_id"/>
+                        <result property="orderStatus" column="order_status"/>
+                        <result property="orderNo" column="order_no"/>
+                        <result property="orderAmount" column="order_amount"/>
+                        <result property="payAmount" column="pay_amount"/>
+                        <result property="payTime" column="pay_time"/>
+            </resultMap>
+</mapper>

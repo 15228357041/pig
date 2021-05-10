@@ -17,7 +17,7 @@
  */
 package com.pig4cloud.pig.admin.controller;
 
-import com.baomidou.dynamic.datasource.annotation.DS;
+
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.pig4cloud.pig.admin.api.entity.SysLog;
@@ -54,7 +54,7 @@ public class LogController {
 	 * @return
 	 */
 	@GetMapping("/page")
-	@DS("slave")
+	//@DS("slave")
 	public R getLogPage(Page page, SysLog sysLog) {
 		return R.ok(sysLogService.page(page, Wrappers.query(sysLog)));
 	}

@@ -28,7 +28,6 @@ import com.pig4cloud.pig.common.core.util.R;
 import com.pig4cloud.pig.common.log.annotation.SysLog;
 import com.pig4cloud.pig.common.security.annotation.Inner;
 import com.pig4cloud.pig.common.security.util.SecurityUtils;
-import io.seata.spring.annotation.GlobalTransactional;
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -137,7 +136,7 @@ public class UserController {
 	 */
 	@SysLog("更新用户信息")
 	@PutMapping
-	@PreAuthorize("@pms.hasPermission('sys_user_edit')")
+//	@PreAuthorize("@pms.hasPermission('sys_user_edit')")
 	public R updateUser(@Valid @RequestBody UserDTO userDto) {
 		return R.ok(userService.updateUser(userDto));
 	}

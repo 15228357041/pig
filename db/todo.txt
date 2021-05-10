@@ -1,0 +1,26 @@
+seata排除druid依赖或者升级druid依赖
+nacos配置中心中配置spring-secrety-auth2放行路径
+ignore:
+      urls:
+        - /user/**
+auth2授权码方式访问接口
+1:获取授权码code,通过get请求
+http://localhost:3000/oauth/authorize?client_id=pig&response_type=code&scope=server&redirect_uri=http://localhost:4040/sso1/login
+2:通过post请求获取access_token
+http://localhost:3000/oauth/token?code=LTGQ1h&redirect_uri=http://localhost:4040/sso1/login&client_id=pig&client_secret=pig&grant_type=authorization_code
+3:访问接口时在请求头上加上Authorization参数值位Bearer {access_token}
+
+auth2密码方式访问接口
+1:通过密码获取access_token
+http://localhost:3000/oauth/token?grant_type=password&client_id=pig&client_secret=pig&username=admin&password=123456
+2:访问接口时在请求头上加上Authorization参数值位Bearer {access_token}
+
+auth2凭证式访问接口
+1:通过凭证获取access_token
+http://localhost:3000/oauth/token?grant_type=client_credentials&client_id=pig&client_secret=pig
+2:访问接口时在请求头上加上Authorization参数值位Bearer {access_token}
+
+
+client配置在pig.sys_oauth_client_details表上,authorized_grant_types支持的OAuth 2.0访问方式
+
+扫描不到mapper时检查是否引入mybatis依赖
